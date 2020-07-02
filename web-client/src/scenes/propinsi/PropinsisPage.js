@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Page from '../../components/Page';
 import styles from './styles.js';
-import { deleteById, findAll } from '../../actions/items';
+import { deleteById, findAll } from '../../actions/propinsi';
 import { Button, Tooltip } from '@material-ui/core';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import { connect } from 'react-redux';
@@ -14,7 +14,7 @@ import {
 import Backdrop from '@material-ui/core/Backdrop';
 
 
-class ItemsPage extends Component {
+class PropinsisPage extends Component {
 
 
   constructor(props) {
@@ -57,7 +57,7 @@ class ItemsPage extends Component {
   }
 
   onAdd = () => {
-    this.props.history.push('/items/add');
+    this.props.history.push('/propinsi/add');
   }
 
   onReload = () => {
@@ -74,7 +74,7 @@ class ItemsPage extends Component {
   }
 
   onRowClick = rowData => {
-    this.props.history.push(`/items/${rowData[0]}`);
+    this.props.history.push(`/propinsi/${rowData[0]}`);
   };
 
   onChangePage = (currentPage) => {
@@ -105,14 +105,14 @@ class ItemsPage extends Component {
     const columns = [
       {
         name: "id",
-        label: "ID",
+        label: "Id_Propinsi",
         options: {
           sortDirection: params.sort
         }
       },
       {
-        name: "name",
-        label: "Name",
+        name: "namaPropinsi",
+        label: "Nama Propinsi",
         options: {
           sort: false,
         }
@@ -149,11 +149,11 @@ class ItemsPage extends Component {
           <Button variant="contained" color="primary"
             onClick={this.onAdd}
             startIcon={<AddCircleOutlineIcon />}>
-            New Item
+            New Kontrasepsi
           </Button>
         </div>
         <MUIDataTable
-          title={"Item List"}
+          title={"Propinsi List"}
           data={!loading ? data : []}
           columns={columns}
           options={options}
@@ -174,11 +174,11 @@ class ItemsPage extends Component {
 
 
 const mapStateToProps = state => ({
-  deleteData: state.deleteItemById.data,
-  deleteError: state.deleteItemById.error,
-  data: state.findItems.data,
-  loading: state.findItems.loading || state.deleteItemById.loading,
-  error: state.findItems.error || state.deleteItemById.error
+  deleteData: state.deletePropinsiById.data,
+  deleteError: state.deletePropinsiById.error,
+  data: state.findPropinsis.data,
+  loading: state.findPropinsis.loading || state.deletePropinsiById.loading,
+  error: state.findPropinsis.error || state.deletePropinsiById.error
 });
 
 const mapDispatchToProps = {
@@ -186,7 +186,7 @@ const mapDispatchToProps = {
 };
 
 export default withStyles(styles, { withTheme: true })(
-  connect(mapStateToProps, mapDispatchToProps)(ItemsPage)
+  connect(mapStateToProps, mapDispatchToProps)(PropinsisPage)
 );
 
 

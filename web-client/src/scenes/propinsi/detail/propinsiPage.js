@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { Button, TextField, CircularProgress } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import Page from '../../../components/Page';
-import { save, findById } from '../../../actions/items';
+import { save, findById } from '../../../actions/propinsi';
 import styles from './styles.js';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { connect } from 'react-redux';
 import Backdrop from '@material-ui/core/Backdrop';
 
-class ItemPage extends Component {
+class PropinsiPage extends Component {
 
   constructor(props) {
     super(props);
@@ -19,7 +19,7 @@ class ItemPage extends Component {
     this.state = {
       form: {
         id: match.params.id,
-        name: ''
+        namaPropinsi: ''
       },
       error: false
     };
@@ -76,7 +76,7 @@ class ItemPage extends Component {
             }
             <div className={classes.formField}>
               <TextField id="name" name="name" label="Name" type="text"
-                error={errorData.name} value={form.name} helperText={errorData.name ? errorData.name[0] : null}
+                error={errorData.namaPropinsi} value={form.namaPropinsi} helperText={errorData.namaPropinsi ? errorData.namaPropinsi[0] : null}
                 onChange={this.onChange} fullWidth />
             </div>
             <div className={classes.formField}>
@@ -84,7 +84,7 @@ class ItemPage extends Component {
                 startIcon={<GetAppIcon />} disabled={loading}>
                 Save
             </Button>
-              <Button className={classes.backButton} variant="contained" color="inherit" href="/items"
+              <Button className={classes.backButton} variant="contained" color="inherit" href="/propinsis"
                 startIcon={<ArrowBackIcon />}>
                 Back
             </Button>
@@ -101,11 +101,11 @@ class ItemPage extends Component {
 }
 
 const mapStateToProps = state => ({
-  saveData: state.saveItem.data,
-  saveError: state.saveItem.error,
-  data: state.findItemById.data,
-  loading: state.findItemById.loading || state.saveItem.loading,
-  error: state.findItemById.error
+  saveData: state.savePropinsi.data,
+  saveError: state.savePropinsi.error,
+  data: state.findPropinsiById.data,
+  loading: state.findPropinsiById.loading || state.savePropinsi.loading,
+  error: state.findPropinsiById.error
 });
 
 const mapDispatchToProps = {
@@ -113,5 +113,5 @@ const mapDispatchToProps = {
 };
 
 export default withStyles(styles, { withTheme: true })(
-  connect(mapStateToProps, mapDispatchToProps)(ItemPage)
+  connect(mapStateToProps, mapDispatchToProps)(PropinsiPage)
 );

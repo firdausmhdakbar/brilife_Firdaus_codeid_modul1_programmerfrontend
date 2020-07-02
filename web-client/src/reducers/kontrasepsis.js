@@ -1,27 +1,27 @@
 import {
-    SAVE_UNIT_REQUEST, SAVE_UNIT_SUCCESS, SAVE_UNIT_FAILURE,
-    DELETE_UNIT_REQUEST, DELETE_UNIT_SUCCESS, DELETE_UNIT_FAILURE,
-    FIND_UNIT_REQUEST, FIND_UNIT_SUCCESS, FIND_UNIT_FAILURE,
-    FIND_UNITS_REQUEST, FIND_UNITS_SUCCESS, FIND_UNITS_FAILURE
+    SAVE_KONTRASEPSI_REQUEST, SAVE_KONTRASEPSI_SUCCESS, SAVE_KONTRASEPSI_FAILURE,
+    DELETE_KONTRASEPSI_REQUEST, DELETE_KONTRASEPSI_SUCCESS, DELETE_KONTRASEPSI_FAILURE,
+    FIND_KONTRASEPSI_REQUEST, FIND_KONTRASEPSI_SUCCESS, FIND_KONTRASEPSI_FAILURE,
+    FIND_KONTRASEPSIS_REQUEST, FIND_KONTRASEPSIS_SUCCESS, FIND_KONTRASEPSIS_FAILURE
 } from '../actions/constants';
 
 const defaultState = { data: null, loading: false, error: null }
 
-export function saveUnit(state = defaultState, action) {
+export function saveKontrasepsi(state = defaultState, action) {
     switch (action.type) {
-        case SAVE_UNIT_REQUEST:
+        case SAVE_KONTRASEPSI_REQUEST:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
-        case SAVE_UNIT_SUCCESS:
+        case SAVE_KONTRASEPSI_SUCCESS:
             return {
                 data: action.data,
                 loading: false,
                 error: null
             }
-        case SAVE_UNIT_FAILURE:
+        case SAVE_KONTRASEPSI_FAILURE:
             return {
                 ...state,
                 loading: false,
@@ -33,21 +33,21 @@ export function saveUnit(state = defaultState, action) {
 }
 
 
-export function deleteUnitById(state = defaultState, action) {
+export function deleteKontrasepsiById(state = defaultState, action) {
     switch (action.type) {
-        case DELETE_UNIT_REQUEST:
+        case DELETE_KONTRASEPSI_REQUEST:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
-        case DELETE_UNIT_SUCCESS:
+        case DELETE_KONTRASEPSI_SUCCESS:
             return {
                 data: action.data,
                 loading: false,
                 error: null
             }
-        case DELETE_UNIT_FAILURE:
+        case DELETE_KONTRASEPSI_FAILURE:
             return {
                 ...state,
                 loading: false,
@@ -58,21 +58,21 @@ export function deleteUnitById(state = defaultState, action) {
     }
 }
 
-export function findUnitById(state = defaultState, action) {
+export function findKontrasepsiById(state = defaultState, action) {
     switch (action.type) {
-        case FIND_UNIT_REQUEST:
+        case FIND_KONTRASEPSI_REQUEST:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
-        case FIND_UNIT_SUCCESS:
+        case FIND_KONTRASEPSI_SUCCESS:
             return {
                 data: action.data,
                 loading: false,
                 error: null
             }
-        case FIND_UNIT_FAILURE:
+        case FIND_KONTRASEPSI_FAILURE:
             return {
                 ...state,
                 loading: false,
@@ -83,21 +83,21 @@ export function findUnitById(state = defaultState, action) {
     }
 }
 
-export function findUnits(state = defaultState, action) {
+export function findKontrasepsis(state = defaultState, action) {
     switch (action.type) {
-        case FIND_UNITS_REQUEST:
+        case FIND_KONTRASEPSIS_REQUEST:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
-        case FIND_UNITS_SUCCESS:
+        case FIND_KONTRASEPSIS_SUCCESS:
             return {
                 data: action.data,
                 loading: false,
                 error: null
             }
-        case FIND_UNITS_FAILURE:
+        case FIND_KONTRASEPSIS_FAILURE:
             return {
                 ...state,
                 loading: false,

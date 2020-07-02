@@ -1,3 +1,2 @@
-export { default as StocksPage} from './stocksPage';
-export { default as StockPage} from './detail/stockPage';
-export { default as StocksPageSummary} from './stocksPageSummary';
+export { default as PemakaiKontrasepsisPage} from './PemakaiKontrasepsisPage';
+export { default as PemakaiKontrasepsiPage} from './detail/PemakaiKontrasepsiPage';

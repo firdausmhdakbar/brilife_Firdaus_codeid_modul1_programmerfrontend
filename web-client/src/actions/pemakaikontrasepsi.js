@@ -45,15 +45,15 @@ export const save = (model) =>
         const request = model.id
             ? commonAxios.put(`pemakaikontrasepsi/${model.id}`,
                 {
-                    "item": { "id": model.item?.id },
-                    "quantity": model.quantity,
-                    "unit": { "id": model.unit?.id }
+                    "propinsi": { "id": model.propinsi?.id },
+                    "jumlahPemakai": model.jumlahPemakai,
+                    "kontrasepsi": { "id": model.kontrasepsi?.id }
                 })
             : commonAxios.post(`pemakaikontrasepsi`,
                 {
-                    "item": { "id": model.item?.id },
-                    "quantity": model.quantity,
-                    "unit": { "id": model.unit?.id }
+                    "propinsi": { "id": model.propinsi?.id },
+                    "jumlahPemakai": model.jumlahPemakai,
+                    "kontrasepsi": { "id": model.kontrasepsi?.id }
                 });
         request
             .then(data => sleep(1000, data))

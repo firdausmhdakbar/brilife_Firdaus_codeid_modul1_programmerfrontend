@@ -13,13 +13,13 @@ function sleep(delay, value) {
     });
 }
 
-export const deleteById = (id_kontrasepsi) =>
+export const deleteById = (id) =>
     (dispatch) => {
         dispatch({
             type: DELETE_KONTRASEPSI_REQUEST
         });
 
-        commonAxios.delete(`kontrasepsi/${id_kontrasepsi}`)
+        commonAxios.delete(`kontrasepsi/${id}`)
             .then(data => sleep(3000, data))
             .then(data => {
                 dispatch(deleteKontrasepsiSuccess(data));
@@ -34,14 +34,14 @@ export const deleteById = (id_kontrasepsi) =>
             });
     };
 
-export const save = ({ id_kontrasepsi, namaKontrasepsi} = {}) =>
+export const save = ({ id, namaKontrasepsi} = {}) =>
     (dispatch) => {
         dispatch({
             type: SAVE_KONTRASEPSI_REQUEST
         });
 
-        const request = id_kontrasepsi ?
-            commonAxios.put(`kontrasepsi/${id_kontrasepsi}`, { id_kontrasepsi, namaKontrasepsi }) :
+        const request = id ?
+            commonAxios.put(`kontrasepsi/${id}`, { id, namaKontrasepsi }) :
             commonAxios.post('kontrasepsi/', { namaKontrasepsi});
 
         request
@@ -65,13 +65,13 @@ export const save = ({ id_kontrasepsi, namaKontrasepsi} = {}) =>
             });
     };
 
-export const findById = (id_kontrasepsi) =>
+export const findById = (id) =>
     (dispatch) => {
         dispatch({
             type: FIND_KONTRASEPSI_REQUEST
         });
 
-        commonAxios.get(`kontrasepsi/${id_kontrasepsi}`)
+        commonAxios.get(`kontrasepsi/${id}`)
             .then(data => sleep(3000, data))
             .then(data => {
                 dispatch(findKontrasepsiSuccess(data));

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, TextField, CircularProgress } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import Page from '../../../components/Page';
-import { save, findById } from '../../../actions/units';
+import { save, findById } from '../../../actions/kontrasepsi';
 import styles from './styles.js';
 import GetAppIcon from '@material-ui/icons/GetApp';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import Backdrop from '@material-ui/core/Backdrop';
 
 
-class UnitPage extends Component {
+class KontrasepsiPage extends Component {
 
   constructor(props) {
     super(props);
@@ -20,8 +20,7 @@ class UnitPage extends Component {
     this.state = {
       form: {
         id: match.params.id,
-        name: '',
-        description: ''
+        nameKontrasepsi: '',
       },
       error: false
     };
@@ -77,8 +76,8 @@ class UnitPage extends Component {
               </div>
             }
             <div className={classes.formField}>
-              <TextField id="" name="name" label="Name" type="text"
-                error={errorData.name} value={form.name} helperText={errorData.name ? errorData.name[0] : null}
+              <TextField id="" name="namaKontrasepsi" label="Name" type="text"
+                error={errorData.namaKontrasepsi} value={form.namaKontrasepsi} helperText={errorData.namaKontrasepsi ? errorData.namaKontrasepsi[0] : null}
                 onChange={this.onChange} fullWidth />
             </div>
             <div className={classes.formField}>
@@ -91,7 +90,7 @@ class UnitPage extends Component {
                 startIcon={<GetAppIcon />} disabled={loading}>
                 Save
             </Button>
-              <Button className={classes.backButton} variant="contained" color="inherit" href="/units"
+              <Button className={classes.backButton} variant="contained" color="inherit" href="/kontrasepsis"
                 startIcon={<ArrowBackIcon />}>
                 Back
             </Button>
@@ -108,11 +107,11 @@ class UnitPage extends Component {
 }
 
 const mapStateToProps = state => ({
-  saveData: state.saveUnit.data,
-  saveError: state.saveUnit.error,
-  data: state.findUnitById.data,
-  loading: state.findUnitById.loading || state.saveUnit.loading,
-  error: state.findUnitById.error
+  saveData: state.saveKontrasepsi.data,
+  saveError: state.saveKontrasepsi.error,
+  data: state.findKontrasepsiById.data,
+  loading: state.findKontrasepsiById.loading || state.saveKontrasepsi.loading,
+  error: state.findKontrasepsiById.error
 });
 
 const mapDispatchToProps = {
@@ -120,5 +119,5 @@ const mapDispatchToProps = {
 };
 
 export default withStyles(styles, { withTheme: true })(
-  connect(mapStateToProps, mapDispatchToProps)(UnitPage)
+  connect(mapStateToProps, mapDispatchToProps)(KontrasepsiPage)
 );

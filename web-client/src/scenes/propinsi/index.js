@@ -1,2 +1,2 @@
-export { default as ItemsPage} from './ItemsPage';
-export { default as ItemPage} from './detail/ItemPage';
+export { default as PropinsisPage} from './PropinsisPage';
+export { default as PropinsiPage} from './detail/PropinsiPage';

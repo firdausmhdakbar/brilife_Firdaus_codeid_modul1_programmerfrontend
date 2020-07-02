@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { savePropinsi, deletePropinsiById, findPropinsiById, findPropinsis } from './propinsis';
 import { saveKontrasepsi, deleteKontrasepsiById, findKontrasepsiById, findKontrasepsis } from './kontrasepsis';
-import { savePemakaiKontrasepsi, deletePemakaiKontrasepsiById, findPemakaiKontrasepsiById, findPemakaiKontrasepsis, summaryPemakaiKontrasepsis } from './pemakaikontrasepsis';
+import { savePemakaiKontrasepsi, deletePemakaiKontrasepsiById, findPemakaiKontrasepsiById, findPemakaiKontrasepsis } from './pemakaikontrasepsis';
 
 
 export default combineReducers({
@@ -17,6 +17,5 @@ export default combineReducers({
     deletePemakaiKontrasepsiById,
     findPemakaiKontrasepsiById,
     findPemakaiKontrasepsis,
-    summaryPemakaiKontrasepsis,
 
 });

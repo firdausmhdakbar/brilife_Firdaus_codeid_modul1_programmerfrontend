@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Page from '../../components/Page';
 import styles from './styles.js';
-import { deleteById, findAll } from '../../actions/units';
+import { deleteById, findAll } from '../../actions/kontrasepsi';
 import { Button, Tooltip } from '@material-ui/core';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import { connect } from 'react-redux';
@@ -14,7 +14,7 @@ import {
 import Backdrop from '@material-ui/core/Backdrop';
 
 
-class UnitsPage extends Component {
+class KontrasepsisPage extends Component {
 
 
   constructor(props) {
@@ -23,7 +23,7 @@ class UnitsPage extends Component {
       data: [],
       total: 0,
       params: {
-        search: { name: '', description: '' },
+        search: { namaKontrasepsi: ''},
         sort: 'asc',
         page: 0,
         size: 10,
@@ -57,7 +57,7 @@ class UnitsPage extends Component {
   }
 
   onAdd = () => {
-    this.props.history.push('/Units/add');
+    this.props.history.push('/Kontrasepsi/add');
   }
 
   onReload = () => {
@@ -73,7 +73,7 @@ class UnitsPage extends Component {
   }
 
   onRowClick = rowData => {
-    this.props.history.push(`/Units/${rowData[0]}`);
+    this.props.history.push(`/Kontrasepsi/${rowData[0]}`);
   };
 
   onChangePage = (currentPage) => {
@@ -104,25 +104,19 @@ class UnitsPage extends Component {
     const columns = [
       {
         name: "id",
-        label: "ID",
+        label: "ID Kontrasepsi",
         options: {
           sortDirection: params.sort
         }
       },
       {
-        name: "name",
-        label: "Name",
+        name: "namaKontrasepsi",
+        label: "Nama Kontrasepsi",
         options: {
           sort: false,
         }
       },
-      {
-        name: "description",
-        label: "Description",
-        options: {
-          sort: false,
-        }
-      }
+
     ];
     const options = {
       serverSide: true,
@@ -156,11 +150,11 @@ class UnitsPage extends Component {
           <Button variant="contained" color="primary"
             onClick={this.onAdd}
             startIcon={<AddCircleOutlineIcon />}>
-            New Unit
+            New Kontrasepsi
           </Button>
         </div>
         <MUIDataTable
-          title={"Unit List"}
+          title={"Kontrasepsi List"}
           data={!loading ? data : []}
           columns={columns}
           options={options}
@@ -181,11 +175,11 @@ class UnitsPage extends Component {
 
 
 const mapStateToProps = state => ({
-  deleteData: state.deleteUnitById.data,
-  deleteError: state.deleteUnitById.error,
-  data: state.findUnits.data,
-  loading: state.findUnits.loading || state.deleteUnitById.loading,
-  error: state.findUnits.error || state.deleteUnitById.error
+  deleteData: state.deleteKontrasepsiById.data,
+  deleteError: state.deleteKontrasepsiById.error,
+  data: state.findKontrasepsis.data,
+  loading: state.findKontrasepsis.loading || state.deleteKontrasepsiById.loading,
+  error: state.findKontrasepsis.error || state.deleteKontrasepsiById.error
 });
 
 const mapDispatchToProps = {
@@ -193,7 +187,7 @@ const mapDispatchToProps = {
 };
 
 export default withStyles(styles, { withTheme: true })(
-  connect(mapStateToProps, mapDispatchToProps)(UnitsPage)
+  connect(mapStateToProps, mapDispatchToProps)(KontrasepsisPage)
 );
 
 

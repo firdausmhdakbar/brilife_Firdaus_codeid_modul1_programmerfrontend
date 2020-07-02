@@ -13,13 +13,13 @@ function sleep(delay, value) {
     });
 }
 
-export const deleteById = (id_propinsi) =>
+export const deleteById = (id) =>
     (dispatch) => {
         dispatch({
             type: DELETE_PROPINSI_REQUEST
         });
 
-        commonAxios.delete(`propinsi/${id_propinsi}`)
+        commonAxios.delete(`propinsi/${id}`)
             .then(data => sleep(3000, data))
             .then(data => {
                 dispatch(deletePropinsiSuccess(data));
@@ -34,14 +34,14 @@ export const deleteById = (id_propinsi) =>
             });
     };
 
-export const save = ({ id_propinsi, namaPropinsi } = {}) =>
+export const save = ({ id, namaPropinsi } = {}) =>
     (dispatch) => {
         dispatch({
             type: SAVE_PROPINSI_REQUEST
         });
 
-        const request = id_propinsi ?
-            commonAxios.put(`propinsi/${id_propinsi}`, { id_propinsi, namaPropinsi }) :
+        const request = id ?
+            commonAxios.put(`propinsi/${id}`, { id, namaPropinsi }) :
             commonAxios.post('propinsi/', { namaPropinsi });
 
         request
@@ -64,13 +64,13 @@ export const save = ({ id_propinsi, namaPropinsi } = {}) =>
             });
     };
 
-export const findById = (id_propinsi) =>
+export const findById = (id) =>
     (dispatch) => {
         dispatch({
             type: FIND_PROPINSI_REQUEST
         });
 
-        commonAxios.get(`propinsi/${id_propinsi}`)
+        commonAxios.get(`propinsi/${id}`)
             .then(data => sleep(3000, data))
             .then(data => {
                 dispatch(findPropinsiSuccess(data));

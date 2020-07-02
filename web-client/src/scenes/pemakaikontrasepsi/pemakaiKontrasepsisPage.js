@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Page from '../../components/Page';
 import styles from './styles.js';
-import { deleteById, findAll } from '../../actions/stocks';
+import { deleteById, findAll } from '../../actions/PemakaiKontrasepsi';
 import { Button, Tooltip } from '@material-ui/core';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import { connect } from 'react-redux';
@@ -15,7 +15,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 
 
-class StocksPage extends Component {
+class PemakaiKontrasepsisPage extends Component {
 
 
   constructor(props) {
@@ -57,7 +57,7 @@ class StocksPage extends Component {
   }
 
   onAdd = () => {
-    this.props.history.push('/stocks/add');
+    this.props.history.push('/pemakaikontrasepsi/add');
   }
 
   onReload = () => {
@@ -73,7 +73,7 @@ class StocksPage extends Component {
   }
 
   onRowClick = rowData => {
-    this.props.history.push(`/stocks/${rowData[0]}`);
+    this.props.history.push(`/pemakaikontrasepsi/${rowData[0]}`);
   };
 
   onChangePage = (currentPage) => {
@@ -105,22 +105,22 @@ class StocksPage extends Component {
         }
       },
       {
-        name: "item.name",
-        label: "Item",
+        name: "list_propinsi.namaPropinsi",
+        label: "List Propinsi",
         options: {
           sort: false,
         }
       },
       {
-        name: "quantity",
-        label: "Quantity",
+        name: "jumlahPemakai",
+        label: "Jumlah Pemakai",
         options: {
           sort: false,
         }
       },
       {
-        name: "unit.name",
-        label: "Unit",
+        name: "list_kontrasepsi.namaKontrasepsi",
+        label: "List Kontrasepsi",
         options: {
           sort: false,
         }
@@ -154,18 +154,14 @@ class StocksPage extends Component {
     return (
       <Page error={error}>
         <div className={classes.buttonContainer}>
-          <Button variant="contained" color="primary" href="/stocksPageSummary"
-            startIcon={< EventAvailableIcon />}>
-            Stocks Summary List
-            </Button> &nbsp;
           <Button variant="contained" color="primary"
             onClick={this.onAdd}
             startIcon={<AddCircleOutlineIcon />}>
-            New Stock
+            New Pemakai Kontrasepsi
           </Button>
         </div>
         <MUIDataTable
-          title={"Stock List"}
+          title={"Pemakai Kontrasepsi List"}
           data={!loading ? data : []}
           columns={columns}
           options={options}
@@ -186,11 +182,11 @@ class StocksPage extends Component {
 
 
 const mapStateToProps = state => ({
-  deleteData: state.deleteStockById.data,
-  deleteError: state.deleteStockById.error,
-  data: state.findStocks.data,
-  loading: state.findStocks.loading || state.deleteStockById.loading,
-  error: state.findStocks.error || state.deleteStockById.error
+  deleteData: state.deletePemakaiKontrasepsiById.data,
+  deleteError: state.deletePemakaiKontrasepsiById.error,
+  data: state.findPemakaiKontrasepsis.data,
+  loading: state.findPemakaiKontrasepsis.loading || state.deletePemakaiKontrasepsiById.loading,
+  error: state.findPemakaiKontrasepsis.error || state.deletePemakaiKontrasepsiById.error
 });
 
 const mapDispatchToProps = {
@@ -198,7 +194,7 @@ const mapDispatchToProps = {
 };
 
 export default withStyles(styles, { withTheme: true })(
-  connect(mapStateToProps, mapDispatchToProps)(StocksPage)
+  connect(mapStateToProps, mapDispatchToProps)(PemakaiKontrasepsisPage)
 );
 
 
