@@ -1,6 +1,6 @@
-package com.enigma.restservice.validation;
+package com.brilife.restservice.validation;
 
-import com.enigma.restservice.validation.annotations.MinLength;
+import com.brilife.restservice.validation.annotations.MinLength;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

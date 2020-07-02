@@ -1,4 +1,4 @@
-package com.enigma.restservice.models;
+package com.brilife.restservice.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

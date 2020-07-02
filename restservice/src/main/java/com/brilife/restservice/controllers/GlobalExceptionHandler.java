@@ -1,8 +1,8 @@
-package com.enigma.restservice.controllers;
+package com.brilife.restservice.controllers;
 
-import com.enigma.restservice.exceptions.ApplicationException;
-import com.enigma.restservice.exceptions.ErrorCodes;
-import com.enigma.restservice.models.ResponseMessage;
+import com.brilife.restservice.exceptions.ApplicationException;
+import com.brilife.restservice.exceptions.ErrorCodes;
+import com.brilife.restservice.models.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;

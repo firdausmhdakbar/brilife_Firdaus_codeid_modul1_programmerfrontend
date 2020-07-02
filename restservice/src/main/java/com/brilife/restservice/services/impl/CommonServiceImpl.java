@@ -1,8 +1,8 @@
-package com.enigma.restservice.services.impl;
+package com.brilife.restservice.services.impl;
 
 
-import com.enigma.restservice.exceptions.EntityNotFoundException;
-import com.enigma.restservice.services.CommonService;
+import com.brilife.restservice.exceptions.EntityNotFoundException;
+import com.brilife.restservice.services.CommonService;
 import org.springframework.data.domain.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;

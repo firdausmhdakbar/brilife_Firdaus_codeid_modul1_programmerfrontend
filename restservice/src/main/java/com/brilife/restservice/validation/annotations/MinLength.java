@@ -1,6 +1,5 @@
-package com.enigma.restservice.validation.annotations;
-
-import com.enigma.restservice.validation.MinLengthValidator;
+package com.brilife.restservice.validation.annotations;
+import com.brilife.restservice.validation.MinLengthValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -14,7 +13,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 
 public @interface MinLength {
-    String message() default "{com.enigma.restservice.validation.annotations.MinLength.message}";
+    String message() default "{com.brilife.restservice.validation.annotations.MinLength.message}";
 
     Class<?>[] groups() default {};
 

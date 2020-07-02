@@ -1,4 +1,4 @@
-package com.enigma.restservice.services;
+package com.brilife.restservice.services;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;

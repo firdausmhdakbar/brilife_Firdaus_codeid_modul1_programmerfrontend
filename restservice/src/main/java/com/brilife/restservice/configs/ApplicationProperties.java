@@ -1,4 +1,4 @@
-package com.enigma.restservice.configs;
+package com.brilife.restservice.configs;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

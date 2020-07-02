@@ -1,4 +1,4 @@
-package com.enigma.restservice.exceptions;
+package com.brilife.restservice.exceptions;
 
 public class EntityNotFoundException extends ApplicationException {
 
