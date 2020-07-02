@@ -14,15 +14,12 @@ public class PemakaiKontrasepsi implements Serializable {
     private Integer id;
 
     @ManyToOne
-
-    @Column(name = "id_propinsi")
     @JoinColumn(nullable = false)
     private Propinsi propinsi;
 
     private Integer jumlahPemakai;
 
     @ManyToOne
-    @Column(name = "id_kontrasepsi")
     @JoinColumn(nullable = false)
     private Kontrasepsi kontrasepsi;
 
