@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Page from '../../components/Page';
 import styles from './styles.js';
-import { deleteById, findAll } from '../../actions/PemakaiKontrasepsi';
+import { deleteById, findAll } from '../../actions/pemakaikontrasepsi';
 import { Button, Tooltip } from '@material-ui/core';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import { connect } from 'react-redux';
