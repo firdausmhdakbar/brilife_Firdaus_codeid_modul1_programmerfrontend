@@ -138,7 +138,6 @@ class PemakaiKontrasepsisPage extends Component {
       onRowsDelete: this.onRowsDelete,
       onChangePage: this.onChangePage,
       onChangeRowsPerPage: this.onChangeRowsPerPage,
-      onSearchChange: this.onSearchChange,
       onColumnSortChange: this.onColumnSortChange,
 
       textLabels: {
