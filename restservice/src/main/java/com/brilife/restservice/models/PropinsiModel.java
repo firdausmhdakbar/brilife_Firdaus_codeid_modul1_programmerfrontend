@@ -24,7 +24,7 @@ public class PropinsiModel {
         this.id = id;
     }
 
-    public String getNamePropinsi() {
+    public String getNamaPropinsi() {
         return namaPropinsi;
     }
 

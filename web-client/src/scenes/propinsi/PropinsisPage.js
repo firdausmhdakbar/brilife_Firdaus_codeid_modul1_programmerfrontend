@@ -120,7 +120,7 @@ class PropinsisPage extends Component {
     ];
     const options = {
       serverSide: true,
-      selecttableRows: 'multiple',
+      selectableRows: 'multiple',
       page: params.page,
       count: total,
       rowsPerPage: params.size,
@@ -149,7 +149,7 @@ class PropinsisPage extends Component {
           <Button variant="contained" color="primary"
             onClick={this.onAdd}
             startIcon={<AddCircleOutlineIcon />}>
-            New Kontrasepsi
+            New Propinsi
           </Button>
         </div>
         <MUIDataTable

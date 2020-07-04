@@ -16,7 +16,7 @@ class HomePage extends Component {
         <img src="under.svg" align="middle" width="600" height="444" />
         <Typography>
           <br/>
-          <span><strong><h3>WELCOME TO INVENTORY WEB</h3></strong></span>
+          <span><strong><h3>WELCOME TO KELUARGA BERENCANA WEB</h3></strong></span>
         </Typography>
         
       </Page>
