@@ -13,10 +13,10 @@ public class Kontrasepsi implements Serializable {
     private Integer id;
 
     @Column(nullable = false)
-    private String namaKontrasepsi;
+    private String name;
 
-    public Kontrasepsi(String namaKontrasepsi) {
-        this.namaKontrasepsi = namaKontrasepsi;
+    public Kontrasepsi(String name) {
+        this.name = name;
     }
 
     public Kontrasepsi() {
@@ -30,19 +30,19 @@ public class Kontrasepsi implements Serializable {
         this.id = id;
     }
 
-    public String getNamaKontrasepsi() {
-        return namaKontrasepsi;
+    public String getName() {
+        return name;
     }
 
-    public void setNamaKontrasepsi(String namaKontrasepsi) {
-        this.namaKontrasepsi = namaKontrasepsi;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Kontrasepsi{" +
                 "id=" + id +
-                ", namaKontrasepsi='" + namaKontrasepsi + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

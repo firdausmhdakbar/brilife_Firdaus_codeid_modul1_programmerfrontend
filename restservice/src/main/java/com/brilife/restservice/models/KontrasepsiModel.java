@@ -17,7 +17,7 @@ public class KontrasepsiModel {
     @ApiModelProperty(value = "Propinsi ID")
     @MinLength(3)
     @NotBlank(message = "{name.notblank}")
-    private String namaKontrasepsi;
+    private String name;
 
     public Integer getId() {
         return id;
@@ -27,19 +27,19 @@ public class KontrasepsiModel {
         this.id = id;
     }
 
-    public String getNamaKontrasepsi() {
-        return namaKontrasepsi;
+    public String getName() {
+        return name;
     }
 
-    public void setNamaKontrasepsi(String namaKontrasepsi) {
-        this.namaKontrasepsi = namaKontrasepsi;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "KontrasepsiModel{" +
                 "id=" + id +
-                ", namaKontrasepsi='" + namaKontrasepsi + '\'' +
+                ", namaKontrasepsi='" + name + '\'' +
                 '}';
     }
 }

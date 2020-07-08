@@ -21,8 +21,8 @@ class PemakaiKontrasepsiRepositoryCustomImpl implements PemakaiKontrasepsiReposi
         CriteriaQuery<PemakaiKontrasepsiSummary> criteria = builder.createQuery(PemakaiKontrasepsiSummary.class);
         Root<PemakaiKontrasepsi> root = criteria.from(PemakaiKontrasepsi.class);
 
-        criteria.multiselect(root.get("item").get("name"), builder.sum(root.get("quantity")))
-                .groupBy(root.get("item"),root.get("unit"));
+        criteria.multiselect(root.get("propinsi").get("name"), builder.sum(root.get("jumlahPemakai")))
+                .groupBy(root.get("propinsi"),root.get("kontrasepsi"));
         return entityManager.createQuery(criteria).getResultList();
     }
 

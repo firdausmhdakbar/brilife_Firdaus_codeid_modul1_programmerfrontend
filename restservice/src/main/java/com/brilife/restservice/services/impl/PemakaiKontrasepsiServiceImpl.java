@@ -13,15 +13,14 @@ import java.util.List;
 
 
 @Service
-
 public class PemakaiKontrasepsiServiceImpl implements PemakaiKontrasepsiService {
 
     @Autowired
     private PemakaiKontrasepsiRepository repository;
 
     @Override
-    public PemakaiKontrasepsiService save(PemakaiKontrasepsi entity) {
-        return (PemakaiKontrasepsiService) repository.save(entity);
+    public PemakaiKontrasepsi save(PemakaiKontrasepsi entity) {
+        return repository.save(entity);
     }
 
     @Override

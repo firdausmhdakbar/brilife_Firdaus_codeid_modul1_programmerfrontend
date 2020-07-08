@@ -6,7 +6,9 @@ import com.brilife.restservice.entities.Kontrasepsi;
 import com.brilife.restservice.models.PageableList;
 import com.brilife.restservice.models.ResponseMessage;
 import com.brilife.restservice.models.PemakaiKontrasepsiModel;
+import com.brilife.restservice.services.KontrasepsiService;
 import com.brilife.restservice.services.PemakaiKontrasepsiService;
+import com.brilife.restservice.services.PropinsiService;
 import com.brilife.restservice.summaries.PemakaiKontrasepsiSummary;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -26,11 +28,19 @@ import java.util.List;
 public class PemakaiKontrasepsiController {
 
     @Autowired
+    private PropinsiService propinsiService;
+
+    @Autowired
+    private KontrasepsiService kontrasepsiService;
+
+    @Autowired
     private PemakaiKontrasepsiService pemakaiKontrasepsiService;
 
     @PostMapping
     public ResponseMessage<PemakaiKontrasepsiModel> add(@RequestBody @Valid PemakaiKontrasepsiModel model) {
-        PemakaiKontrasepsi entity = (PemakaiKontrasepsi) pemakaiKontrasepsiService.save(new PemakaiKontrasepsi(model.getPropinsi(), model.getJumlahPemakai(), model.getKontrasepsi()));
+        Propinsi propinsi = propinsiService.findById(model.getPropinsi().getId());
+        Kontrasepsi kontrasepsi = kontrasepsiService.findById(model.getKontrasepsi().getId());
+        PemakaiKontrasepsi entity = pemakaiKontrasepsiService.save(new PemakaiKontrasepsi(propinsi, model.getJumlahPemakai(), kontrasepsi));
 
         ModelMapper modelMapper = new ModelMapper();
         PemakaiKontrasepsiModel data = modelMapper.map(entity, PemakaiKontrasepsiModel.class);
@@ -78,7 +88,7 @@ public class PemakaiKontrasepsiController {
             @RequestParam(required = false) Kontrasepsi kontrasepsi,
             @RequestParam(defaultValue = "asc") String sort,
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "10") int size
+            @RequestParam(defaultValue = "30") int size
 
     ) {
         if (size > 100) {

@@ -13,16 +13,15 @@ public class Propinsi implements Serializable {
     private Integer id;
 
     @Column(nullable = false)
-    private String namaPropinsi;
+    private String name;
 
-    public  Propinsi() {
+    public Propinsi() {
 
     }
 
-    public Propinsi(String namaPropinsi) {
-        this.namaPropinsi = namaPropinsi;
+    public Propinsi(String name) {
+        this.name = name;
     }
-
     public Integer getId() {
         return id;
     }
@@ -31,19 +30,19 @@ public class Propinsi implements Serializable {
         this.id = id;
     }
 
-    public String getNamaPropinsi() {
-        return namaPropinsi;
+    public String getName() {
+        return name;
     }
 
-    public void setNamaPropinsi(String namaPropinsi) {
-        this.namaPropinsi = namaPropinsi;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Propinsi{" +
                 "id=" + id +
-                ", namaPropinsi='" + namaPropinsi + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

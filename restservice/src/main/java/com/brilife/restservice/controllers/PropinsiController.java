@@ -29,7 +29,7 @@ public class PropinsiController {
 
     @PostMapping
     public ResponseMessage<PropinsiModel> add(@RequestBody @Valid PropinsiModel model) {
-        Propinsi entity = propinsiService.save(new Propinsi(model.getNamaPropinsi()));
+        Propinsi entity = propinsiService.save(new Propinsi(model.getName()));
 
         ModelMapper modelMapper = new ModelMapper();
         PropinsiModel data = modelMapper.map(entity, PropinsiModel.class);

@@ -2,21 +2,21 @@ package com.brilife.restservice.summaries;
 
 public class PemakaiKontrasepsiSummary {
 
-    private String nama;
+    private String name;
 
     private Long jumlahPemakai;
 
-    public PemakaiKontrasepsiSummary(String nama, Long jumlahPemakai) {
-        this.nama = nama;
+    public PemakaiKontrasepsiSummary(String name, Long jumlahPemakai) {
+        this.name = name;
         this.jumlahPemakai = jumlahPemakai;
     }
 
-    public String getNama() {
-        return nama;
+    public String getName() {
+        return name;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Long getJumlahPemakai() {

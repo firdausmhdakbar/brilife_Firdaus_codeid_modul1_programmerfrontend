@@ -14,7 +14,7 @@ public class PropinsiModel {
     @ApiModelProperty(value = "Propinsi ID")
     @MinLength(3)
     @NotBlank(message = "{name.notblank}")
-    private String namaPropinsi;
+    private String name;
 
     public Integer getId() {
         return id;
@@ -24,17 +24,17 @@ public class PropinsiModel {
         this.id = id;
     }
 
-    public String getNamaPropinsi() {
-        return namaPropinsi;
+    public String getName() {
+        return name;
     }
 
-    public void setNamaPropinsi(String namaPropinsi) {
-        this.namaPropinsi = namaPropinsi;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return "PropinsiModel{" + "id=" + id + ", namaPropinsi='" + namaPropinsi + '\'' + '}';
+        return "PropinsiModel{" + "id=" + id + ", namaPropinsi='" + name + '\'' + '}';
     }
 }
 

@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface PemakaiKontrasepsiService {
 
-    public PemakaiKontrasepsiService save(PemakaiKontrasepsi entity);
+    public PemakaiKontrasepsi save(PemakaiKontrasepsi entity);
 
     public PemakaiKontrasepsi removeById(Integer id);
 

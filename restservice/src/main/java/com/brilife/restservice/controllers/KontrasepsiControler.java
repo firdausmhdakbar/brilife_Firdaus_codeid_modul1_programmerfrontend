@@ -30,7 +30,7 @@ public class KontrasepsiControler {
 
     @PostMapping
     public ResponseMessage<KontrasepsiModel> add(@RequestBody @Valid KontrasepsiModel model) {
-        Kontrasepsi entity = kontrasepsiService.save(new Kontrasepsi(model.getNamaKontrasepsi()));
+        Kontrasepsi entity = kontrasepsiService.save(new Kontrasepsi(model.getName()));
 
         ModelMapper modelMapper = new ModelMapper();
         KontrasepsiModel data = modelMapper.map(entity, KontrasepsiModel.class);
@@ -71,7 +71,7 @@ public class KontrasepsiControler {
         return ResponseMessage.success(data);
     }
 
-    @ApiOperation(value = "Find All kontrasepsi", tags = {"item"})
+    @ApiOperation(value = "Find All kontrasepsi", tags = {"propinsi"})
     @ApiResponses({
             @ApiResponse(code = 200, message = "This is response", response = ResponseMessage.class)})
     @GetMapping()
