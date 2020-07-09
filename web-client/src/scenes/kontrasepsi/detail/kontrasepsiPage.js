@@ -20,7 +20,7 @@ class KontrasepsiPage extends Component {
     this.state = {
       form: {
         id: match.params.id,
-        nameKontrasepsi: '',
+        name: '',
       },
       error: false
     };
@@ -76,13 +76,8 @@ class KontrasepsiPage extends Component {
               </div>
             }
             <div className={classes.formField}>
-              <TextField id="" name="namaKontrasepsi" label="Name" type="text"
-                error={errorData.namaKontrasepsi} value={form.namaKontrasepsi} helperText={errorData.namaKontrasepsi ? errorData.namaKontrasepsi[0] : null}
-                onChange={this.onChange} fullWidth />
-            </div>
-            <div className={classes.formField}>
-              <TextField id="description" name="description" label="Description" type="text"
-                error={errorData.description} value={form.description} helperText={errorData.description ? errorData.description[0] : null}
+              <TextField id="name" name="name" label="Name" type="text"
+                error={errorData.name} value={form.name} helperText={errorData.name ? errorData.name[0] : null}
                 onChange={this.onChange} fullWidth />
             </div>
             <div className={classes.formField}>
@@ -90,7 +85,7 @@ class KontrasepsiPage extends Component {
                 startIcon={<GetAppIcon />} disabled={loading}>
                 Save
             </Button>
-              <Button className={classes.backButton} variant="contained" color="inherit" href="/kontrasepsis"
+              <Button className={classes.backButton} variant="contained" color="inherit" href="/kontrasepsi"
                 startIcon={<ArrowBackIcon />}>
                 Back
             </Button>

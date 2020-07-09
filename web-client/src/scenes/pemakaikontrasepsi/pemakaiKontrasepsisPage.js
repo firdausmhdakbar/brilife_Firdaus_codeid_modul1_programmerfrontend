@@ -105,7 +105,7 @@ class PemakaiKontrasepsisPage extends Component {
         }
       },
       {
-        name: "list_propinsi.namaPropinsi",
+        name: "propinsi.name",
         label: "List Propinsi",
         options: {
           sort: false,
@@ -119,7 +119,7 @@ class PemakaiKontrasepsisPage extends Component {
         }
       },
       {
-        name: "list_kontrasepsi.namaKontrasepsi",
+        name: "kontrasepsi.name",
         label: "List Kontrasepsi",
         options: {
           sort: false,
@@ -144,7 +144,7 @@ class PemakaiKontrasepsisPage extends Component {
         body: {
           noMatch: loading ?
             <Backdrop className={classes.backdrop} open={true} onClick={loading}>
-              <CircularProgress color="inherit" />
+              <CircularProgress color="inherit" thickness={5}/>
             </Backdrop>
             : "Sorry, not macth records not found"
         }
@@ -153,7 +153,7 @@ class PemakaiKontrasepsisPage extends Component {
     return (
       <Page error={error}>
         <div className={classes.buttonContainer}>
-          <Button variant="contained" color="primary"
+          <Button className={classes.formButton} variant="contained" color="primary"
             onClick={this.onAdd}
             startIcon={<AddCircleOutlineIcon />}>
             New Pemakai Kontrasepsi

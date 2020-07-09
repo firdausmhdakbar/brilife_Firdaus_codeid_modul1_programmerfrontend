@@ -34,15 +34,15 @@ export const deleteById = (id) =>
             });
     };
 
-export const save = ({ id, namaPropinsi } = {}) =>
+export const save = ({ id, name } = {}) =>
     (dispatch) => {
         dispatch({
             type: SAVE_PROPINSI_REQUEST
         });
 
         const request = id ?
-            commonAxios.put(`propinsi/${id}`, { id, namaPropinsi }) :
-            commonAxios.post('propinsi/', { namaPropinsi });
+            commonAxios.put(`propinsi/${id}`, { id, name }) :
+            commonAxios.post('propinsi/', { name });
 
         request
             .then(data => sleep(1000, data))
@@ -86,7 +86,7 @@ export const findAll = ({ search, sort = 'asc', page = 0, size = 10 } = {}) =>
             type: FIND_PROPINSIS_REQUEST
         });
 
-        commonAxios.get('propinsis', {
+        commonAxios.get('propinsi', {
             params: {
                 ...search, sort, page, size
             }

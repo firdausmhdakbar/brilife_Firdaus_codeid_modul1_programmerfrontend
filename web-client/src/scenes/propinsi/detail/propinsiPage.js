@@ -19,7 +19,7 @@ class PropinsiPage extends Component {
     this.state = {
       form: {
         id: match.params.id,
-        namaPropinsi: ''
+        name: ''
       },
       error: false
     };
@@ -76,7 +76,7 @@ class PropinsiPage extends Component {
             }
             <div className={classes.formField}>
               <TextField id="name" name="name" label="Name" type="text"
-                error={errorData.namaPropinsi} value={form.namaPropinsi} helperText={errorData.namaPropinsi ? errorData.namaPropinsi[0] : null}
+                error={errorData.name} value={form.name} helperText={errorData.name ? errorData.name[0] : null}
                 onChange={this.onChange} fullWidth />
             </div>
             <div className={classes.formField}>
@@ -84,7 +84,7 @@ class PropinsiPage extends Component {
                 startIcon={<GetAppIcon />} disabled={loading}>
                 Save
             </Button>
-              <Button className={classes.backButton} variant="contained" color="inherit" href="/propinsis"
+              <Button className={classes.backButton} variant="contained" color="inherit" href="/propinsi"
                 startIcon={<ArrowBackIcon />}>
                 Back
             </Button>

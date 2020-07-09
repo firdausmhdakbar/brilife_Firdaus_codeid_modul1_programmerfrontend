@@ -54,7 +54,7 @@ class PemakaiKontrasepsiPage extends Component {
     } else if (prevProps.error !== error) {
       this.setState({ error: error });
     } else if (saveData && prevProps.saveData !== saveData) {
-      history.push('/PemakaiKontrasepsis');
+      history.push('/PemakaiKontrasepsi');
     }
   }
 
@@ -167,11 +167,11 @@ class PemakaiKontrasepsiPage extends Component {
                 onChange={this.onChange} fullWidth />
             </div>
             <div className={classes.formField}>
-              <Button className={classes.formButton} variant="contained" color="primary" type="submit"
+              <Button className={classes.formButton} variant="contained" color="primary" type="submit" 
                 startIcon={<GetAppIcon />} disabled={loading}>
                 Save
             </Button>
-              <Button className={classes.backButton} variant="contained" color="inherit" href="/PemakaiKontrasepsis"
+              <Button className={classes.backButton} variant="contained" href="/PemakaiKontrasepsi"
                 startIcon={<ArrowBackIcon />}>
                 Back
             </Button>

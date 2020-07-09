@@ -40,7 +40,7 @@ class Page extends Component {
         return (
             <div className={classes.root}>
                 <CssBaseline />
-                <Header title="Web Inventory" onMenuClick={this.handleDrawerToggle} />
+                <Header title="Web Keluarga Berencana" onMenuClick={this.handleDrawerToggle} />
                 <Navigation mobileOpen={this.state.drawerOpen} handleDrawerToggle={this.handleDrawerToggle} />
                 <main className={classes.content}>
                     <div className={classes.toolbar} />

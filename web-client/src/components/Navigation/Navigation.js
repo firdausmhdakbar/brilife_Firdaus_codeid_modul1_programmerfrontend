@@ -12,10 +12,11 @@ import {
 } from '@material-ui/core';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import {
-    AccountBalance as HomeIcon,
-    CardTravel as ItemIcon,
-    AddShoppingCart as StockIcon,
-    DynamicFeed as UnitIcon
+    HomeWork as HomeIcon,
+    PinDrop as PropinsiIcon,
+    Security as KontrasepsiIcon,
+    SupervisorAccount as PemakaiKontrasepsiIcon,
+    CloudQueue as AboutIcon,
 } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles.js';
@@ -27,20 +28,25 @@ const menus = [
         label: 'Home'
     },
     {
-        path: '/pemakaikontrasepsi',
-        icon: StockIcon,
-        label: 'Pemakai Kontrasepsi'
-    },
-    {
         path: '/propinsi',
-        icon: ItemIcon,
+        icon: PropinsiIcon,
         label: 'Propinsi'
     },
     {
         path: '/kontrasepsi',
-        icon: UnitIcon,
+        icon: KontrasepsiIcon,
         label: 'Kontrasepsi'
-    }
+    },
+    {
+        path: '/pemakaikontrasepsi',
+        icon: PemakaiKontrasepsiIcon,
+        label: 'Pemakai Kontrasepsi'
+    },
+    {
+        path: '/about',
+        icon: AboutIcon,
+        label: 'About'
+    },
 
 ];
 
@@ -58,21 +64,21 @@ class Navigation extends Component {
                     {menus.map((menu, index) => (
                         <Link key={index} to={menu.path}>
                             <ListItem button>
-                                <ListItemIcon><menu.icon/></ListItemIcon>
-                                <ListItemText primary={menu.label}/>
+                                <ListItemIcon><menu.icon /></ListItemIcon>
+                                <ListItemText primary={menu.label} />
                             </ListItem>
                         </Link>
                     ))}
                 </List>
                 <Divider />
-                <List>
-                    <Link to = "/about">
-                    <ListItem button>
-                        <ListItemIcon><InboxIcon /></ListItemIcon>
-                        <ListItemText primary="About" />
-                    </ListItem>
+                {/* <List>
+                    <Link to="/about">
+                        <ListItem button>
+                            <ListItemIcon><InboxIcon /></ListItemIcon>
+                            <ListItemText primary="About" />
+                        </ListItem>
                     </Link>
-                </List>
+                </List> */}
             </div>
         );
 
@@ -84,11 +90,11 @@ class Navigation extends Component {
                         anchor={theme.direction === 'rtl' ? 'right' : 'left'}
                         open={mobileOpen}
                         onClose={handleDrawerToggle}
-                        classes={{ 
+                        classes={{
                             paper: classes.drawerPaper,
                         }}
                         ModalProps={{
-                            keepMounted: true, 
+                            keepMounted: true,
                         }}
                     >
                         {drawer}

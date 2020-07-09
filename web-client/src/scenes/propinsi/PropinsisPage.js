@@ -111,7 +111,7 @@ class PropinsisPage extends Component {
         }
       },
       {
-        name: "namaPropinsi",
+        name: "name",
         label: "Nama Propinsi",
         options: {
           sort: false,
@@ -146,7 +146,7 @@ class PropinsisPage extends Component {
     return (
       <Page error={error}>
         <div className={classes.buttonContainer}>
-          <Button variant="contained" color="primary"
+          <Button className={classes.formButton} variant="contained" color="primary"
             onClick={this.onAdd}
             startIcon={<AddCircleOutlineIcon />}>
             New Propinsi

@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const commonAxios = axios.create({
-    baseURL: process.env.REACT_APP_BACKEND_URL
+    baseURL: "http://localhost:8080/"
 });
 
 commonAxios.interceptors.response.use(function (response) {

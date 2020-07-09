@@ -23,7 +23,7 @@ class KontrasepsisPage extends Component {
       data: [],
       total: 0,
       params: {
-        search: { namaKontrasepsi: ''},
+        search: { name: ''},
         sort: 'asc',
         page: 0,
         size: 10,
@@ -110,7 +110,7 @@ class KontrasepsisPage extends Component {
         }
       },
       {
-        name: "namaKontrasepsi",
+        name: "name",
         label: "Nama Kontrasepsi",
         options: {
           sort: false,
@@ -138,7 +138,7 @@ class KontrasepsisPage extends Component {
         body: {
           noMatch: loading ?
             <Backdrop className={classes.backdrop} open={true} onClick={loading}>
-              <CircularProgress color="inherit" />
+              <CircularProgress color="inherit" thickness={5}/>
             </Backdrop>
             : "Sorry, not macth records not found"
         }
@@ -147,7 +147,7 @@ class KontrasepsisPage extends Component {
     return (
       <Page error={error}>
         <div className={classes.buttonContainer}>
-          <Button variant="contained" color="primary"
+          <Button className={classes.formButton} variant="contained" color="primary"
             onClick={this.onAdd}
             startIcon={<AddCircleOutlineIcon />}>
             New Kontrasepsi

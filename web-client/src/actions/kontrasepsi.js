@@ -34,15 +34,15 @@ export const deleteById = (id) =>
             });
     };
 
-export const save = ({ id, namaKontrasepsi} = {}) =>
+export const save = ({ id, name} = {}) =>
     (dispatch) => {
         dispatch({
             type: SAVE_KONTRASEPSI_REQUEST
         });
 
         const request = id ?
-            commonAxios.put(`kontrasepsi/${id}`, { id, namaKontrasepsi }) :
-            commonAxios.post('kontrasepsi/', { namaKontrasepsi});
+            commonAxios.put(`kontrasepsi/${id}`, { id, name }) :
+            commonAxios.post('kontrasepsi/', { name});
 
         request
             .then(data => sleep(1000, data))

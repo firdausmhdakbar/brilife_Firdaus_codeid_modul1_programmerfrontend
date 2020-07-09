@@ -18,8 +18,8 @@ class AboutPage extends Component {
           <br />
           <span><strong><h3>THIS IS ABOUT PAGE</h3></strong></span>
           <p>Inventory web is a simple web created with the aim to facilitate users in doing data recapitulation,</p>
-          <p>where users can easily process inventory data, ranging from adding new data, editing, deleting, and others.</p>
-          <p>There are four main menus, namely, Item, Unit, Stock, and Transaction.</p>
+          <p>where users can easily process Keluarga Berencana data, ranging from adding new data, editing, deleting, and others.</p>
+          <p>There are four main menus, namely, Propinsi, Kontrasepsi, and PemakaiKontrasepsi.</p>
           <p>Where on each menu can be easily accessed and used by users.</p>
         </Typography>
 

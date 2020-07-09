@@ -92,7 +92,7 @@ export const findById = (id) =>
             });
     };
 
-export const findAll = ({ sort = 'asc', page = 0, size = 10 } = {}) =>
+export const findAll = ({ sort = 'asc', page = 0, size = 15 } = {}) =>
     (dispatch) => {
         dispatch({
             type: FIND_PEMAKAIKONTRASEPSIS_REQUEST
