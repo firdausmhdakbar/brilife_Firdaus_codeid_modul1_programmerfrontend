@@ -13,7 +13,7 @@ const routes = [
   },
   {
     path: '/home',
-    component: HomePage
+    component: HomePage,
   },
   {
     path: '/propinsi/add',

@@ -1,6 +1,6 @@
 const styles = theme => ({
     appBar: {
-        zIndex: theme.zIndex.drawer + 1,
+        // zIndex: theme.zIndex.drawer + 1,
         background: 'linear-gradient(to right, #1976d2, #0d47a1, #2196f3, #7e57c2, #b39ddb, #5e35b1, #4527a0 )',
     },
     menuButton: {

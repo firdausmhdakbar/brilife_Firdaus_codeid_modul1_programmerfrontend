@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 import Page from '../../components/Page';
 import styles from './styles.js';
+import logo from '../about/logo.svg'
 
 
 class AboutPage extends Component {
@@ -13,7 +14,7 @@ class AboutPage extends Component {
 
     return (
       <Page>
-        <img src="under2.svg" align="middle" width="300" height="300" />
+        <img src={logo} align="middle" width="1000" height="400" />
         <Typography>
           <br />
           <span><strong><h3>THIS IS ABOUT PAGE</h3></strong></span>

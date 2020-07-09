@@ -12,7 +12,7 @@ public class PemakaiKontrasepsiModel {
     @NotNull(message = "{qty.notnull}")
     private Propinsi propinsi;
 
-    @NotNull(message = "{qty.notnull}")
+    @NotNull(message = "{jumahPemakai.notnull}")
     private Integer jumlahPemakai;
 
     @NotNull(message = "{qty.notnull}")
