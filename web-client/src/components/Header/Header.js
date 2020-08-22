@@ -26,9 +26,8 @@ class Header extends Component {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography  className={classes.titleBar} id="title-label" variant="h6" noWrap>
+                    <Typography className={classes.titleBar} id="title-label" variant="h6" noWrap>
                         {title}
-                    
                     </Typography>
                 </Toolbar>
             </AppBar>
