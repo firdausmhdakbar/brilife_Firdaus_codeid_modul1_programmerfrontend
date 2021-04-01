@@ -1,2 +1,2 @@
-export { default as KontrasepsisPage} from './KontrasepsisPage';
-export { default as KontrasepsiPage} from './detail/KontrasepsiPage';
+export { default as KontrasepsisPage} from './kontrasepsisPage';
+export { default as KontrasepsiPage} from './detail/kontrasepsiPage';

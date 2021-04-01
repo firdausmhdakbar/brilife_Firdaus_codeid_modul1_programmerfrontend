@@ -1,2 +1,2 @@
-export { default as PemakaiKontrasepsisPage} from './PemakaiKontrasepsisPage';
-export { default as PemakaiKontrasepsiPage} from './detail/PemakaiKontrasepsiPage';
+export { default as PemakaiKontrasepsisPage} from './pemakaiKontrasepsisPage';
+export { default as PemakaiKontrasepsiPage} from './detail/pemakaiKontrasepsiPage';

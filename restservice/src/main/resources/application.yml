@@ -5,7 +5,7 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/db_keluarga_berencana?useTimezone=true&serverTimezone=UTC
     username: root
-    password:
+    password: 
   jpa:
     hibernate:
       ddl-auto: update
